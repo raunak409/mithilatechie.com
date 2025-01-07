@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mithilatechie - Official Website</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ff6347;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            font-size: 1.2rem;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ff6347;
+        }
+
+        /* Animation for Name */
+        .name {
+            font-size: 1.5rem; /* Smaller font size */
+            font-family: 'Verdana', sans-serif; /* New font family */
+            color: #808080; /* Gray color */
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: nameSplash 2s infinite;
+        }
+
+        @keyframes nameSplash {
+            0% {
+                text-shadow: 0 0 0px #fff;
+            }
+            25% {
+                text-shadow: 0 0 15px #fff;
+            }
+            50% {
+                text-shadow: 0 0 30px #fff;
+            }
+            75% {
+                text-shadow: 0 0 15px #fff;
+            }
+            100% {
+                text-shadow: 0 0 0px #fff;
+            }
+        }
+
+        /* Hero Section */
+        #hero {
+            background-image: url('https://t3.ftcdn.net/jpg/10/66/88/64/360_F_1066886445_g7GjAticfwUTcn0nLWRJuKeVLIj9AJik.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Dim overlay */
+            z-index: 1;
+        }
+
+        #hero .hero-content {
+            max-width: 50%;
+            position: relative;
+            z-index: 2;
+        }
+
+        #hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        #hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            background-color: #3498db; /* Blue background */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .btn {
+            background-color: #ff6347;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff4500;
+        }
+
+        /* About Section */
+        #about {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Videos Section */
+        #videos {
+            background-color: #f0f0f0;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #videos h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .video-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: scale(1.05);
+        }
+
+        iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+
+        .video-card h3 {
+            padding: 10px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #ff6347;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #ff4500;
+        }
+
+        .social-links a {
+            margin: 10px;
+            font-size: 1.2rem;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff6347;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="name">Raunak Verma</div>
+        <nav>
+            <div class="logo">
+                <h1>Mithilatechie</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h2>Welcome to Mithilatechie</h2>
+            <p>Making tech content funny and interesting in English and Maithili.</p>
+            <a href="https://www.youtube.com/@MithilaTechie" target="_blank" class="btn">Visit YouTube Channel</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Mithilatechie is a YouTube channel that combines humor and technology to make learning tech concepts easy and enjoyable. From reviews to tutorials, we cover it all in English and Maithili.</p>
+    </section>
+
+    <section id="videos">
+        <h2>Latest Videos</h2>
+        <div class="video-container">
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/EQj7ES0Mr6M" frameborder="0" allowfullscreen></iframe>
+                <h3>Most Viral Video</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="social-links">
+            <p>Follow us on:</p>
+            <a href="https://www.instagram.com/raunak_vermaa_/" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/@mithilatechie" target="_blank">TikTok</a>
+            <a href="https://www.youtube.com/@MithilaTechie" target="_blank">YouTube</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mithilatechie. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+``` 
+
+Let me know if you'd like further adjustments!
